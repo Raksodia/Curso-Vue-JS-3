@@ -15,6 +15,9 @@
         <ul>
             <li v-for="fruta in frutas_con_id" v-bind:key="fruta">{{fruta.id}} - {{fruta.nombre}}</li>
         </ul>
+        <select>
+            <option v-for="fruta in frutas_con_id" v-bind:value="fruta.id">{{fruta.nombre}}</option>
+        </select>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
