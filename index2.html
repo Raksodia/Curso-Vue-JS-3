@@ -10,6 +10,8 @@
     <div id="app">
         <label v-bind:title="titulo">Hola Mundo</label>
         <hr>
+        <button v-on:click="mostrarImagen('js.jpg')">Imagen JS</button>
+        <button v-on:click="mostrarImagen('css.jpg')">Imagen CSS</button>
         <img v-bind:src="imagen">
     </div>
     <script src="https://unpkg.com/vue@next"></script>
@@ -19,6 +21,11 @@
                 return {
                     titulo: "Este es un Titulo Dinamico",
                     imagen: 'js.jpg'
+                }
+            },
+            methods : {
+                mostrarImagen(img){
+                    this.imagen = img;
                 }
             }
         }
