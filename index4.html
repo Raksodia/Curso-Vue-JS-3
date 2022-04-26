@@ -13,7 +13,11 @@
         </ul>
         <hr>
         <ul>
-            <li v-for="(fruta,index) in frutas_con_id" v-bind:key="fruta">Indice:{{index}} - {{fruta.id}} - {{fruta.nombre}}</li>
+            <li v-for="(fruta,index) in frutas_con_id" v-bind:key="fruta">Indice:{{index}} - {{fruta.id}} - {{fruta.nombre}}
+                <ul>
+                    <li v-for="pais in fruta.paises_origen">Pais: {{pais.id}} - {{pais.pais}}</li>
+                </ul>
+            </li>
         </ul>
         <select>
             <option v-for="fruta in frutas_con_id" v-bind:value="fruta.id">{{fruta.nombre}}</option>
@@ -28,20 +32,44 @@
                    frutas_con_id: [
                         { 
                             id:1,
-                            nombre:'Manzana'
+                            nombre:'Manzana',
+                            paises_origen: [
+                                {
+                                    id: 1,
+                                    pais: 'El Salvador'
+                                },
+                                {
+                                    id: 2,
+                                    pais: 'Guatemala'
+                                }
+                            ]
                         },
                         { 
                             id:2,
-                            nombre:'Pera'
+                            nombre:'Pera',
+                            paises_origen: [
+                                {
+                                    id: 3,
+                                    pais: 'Honduras'
+                                }
+                                ,
+                                {
+                                    id: 4,
+                                    pais: 'Nicaragua'
+                                }
+                            ]
+                            
                         },
                         { 
                             id:3,
-                            nombre:'Uva'
+                            nombre:'Uva',
+                            paises_origen: null
                         },
                    ]
                 }
             }
         }
+
         var mountedApp = Vue.createApp(app).mount("#app");
     </script>
 </body>
