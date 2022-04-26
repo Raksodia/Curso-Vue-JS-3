@@ -13,6 +13,9 @@
     <div id="app">
         Hola {{ nombre }}
     </div>
+    <div id="app2">
+        Hola {{ nombre }}
+    </div>
     <script>
         //data, methods, props, mounted, created, computed, watch, destroyed
         const holaMundo = {
@@ -23,7 +26,16 @@
             }
         }
 
+        const holaMundo2 = {
+            data() {
+                return{
+                    nombre: 'Williamns App2'
+                }
+            }
+        }
+
         var mountedApp = Vue.createApp(holaMundo).mount("#app");
+        var mountedApp2 = Vue.createApp(holaMundo2).mount("#app2");
     </script>
 </body>
 </html>
