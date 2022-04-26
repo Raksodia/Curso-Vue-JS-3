@@ -9,13 +9,16 @@
 <body>
     <div id="app">
         <label v-bind:title="titulo">Hola Mundo</label>
+        <hr>
+        <img v-bind:src="imagen">
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
         const app = {
             data(){
                 return {
-                    titulo: "Este es un Titulo Dinamico"
+                    titulo: "Este es un Titulo Dinamico",
+                    imagen: 'js.jpg'
                 }
             }
         }
