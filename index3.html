@@ -19,6 +19,10 @@
         </select>
         <hr>
         Fruta Seleccionada: {{ fruta }}
+        <hr>
+        <input type="checkbox" v-model="activo">
+        <hr>
+        Checkbox : {{ activo }}
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
@@ -26,7 +30,8 @@
             data(){
                 return {
                     nombre: '',
-                    fruta: ''
+                    fruta: '',
+                    activo: true
                 }
             }
         }
