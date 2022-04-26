@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h5 v-if="numero_uno > numero_dos">
+            El numero {{numero_uno}} es mayor a numero {{numero_dos}}
+        </h5>
+        <h5 v-else-if="numero_uno == numero_dos">
+            El numero {{numero_uno}} es igual a numero {{numero_dos}}
+        </h5>
+        <h5 v-else >
+            El numero {{numero_uno}} es menor a numero {{numero_dos}}
+        </h5>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = {
+            data(){
+                return {
+                  numero_uno: 4,
+                  numero_dos: 6
+                }
+            },
+            methods: {
+                
+               
+            },
+            mounted(){
+                
+            }
+        }
+
+        var mountedApp = Vue.createApp(app).mount("#app");
+    </script>
+</body>
+</html>
