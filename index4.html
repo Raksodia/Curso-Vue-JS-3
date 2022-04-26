@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="fruta in frutas" v-bind:key="fruta">{{fruta}}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="fruta in frutas_con_id" v-bind:key="fruta">{{fruta.id}} - {{fruta.nombre}}</li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = {
+            data(){
+                return {
+                   frutas: ['Manzana','Pera','Uva'],
+                   frutas_con_id: [
+                        { 
+                            id:1,
+                            nombre:'Manzana'
+                        },
+                        { 
+                            id:2,
+                            nombre:'Pera'
+                        },
+                        { 
+                            id:3,
+                            nombre:'Uva'
+                        },
+                   ]
+                }
+            }
+        }
+        var mountedApp = Vue.createApp(app).mount("#app");
+    </script>
+</body>
+</html>
