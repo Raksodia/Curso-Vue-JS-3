@@ -12,19 +12,27 @@
 <body>
     <div id="app">
         Contador {{ contador }}
+        <button type="button" v-on:click="stopInterval">Detener Contador</button>
     </div>
     <script>
         //data, methods, props, mounted, created, computed, watch, destroyed
         const holaMundo = {
             data() {
                 return{
-                    contador: 0
+                    contador: 0,
+                    interval: null
                 }
             },
             mounted (){
-                setInterval(() => {
+                this.interval = setInterval(() => {
                     this.contador++;
                 }, 1000);
+            }, 
+            methods: {
+                stopInterval()
+                {
+                    clearInterval(this.interval);
+                }
             }
         }
 
