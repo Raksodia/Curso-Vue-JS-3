@@ -12,13 +12,21 @@
         <input type="text" v-model="nombre">
         <hr>
         <h5>Hola {{nombre}}
+        <select v-model="fruta">
+            <option value="Manzana">Manzana</option>
+            <option value="Pera">Pera</option>
+            <option value="Uva">Uva</option>
+        </select>
+        <hr>
+        Fruta Seleccionada: {{ fruta }}
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
         const app = {
             data(){
                 return {
-                    nombre: ''
+                    nombre: '',
+                    fruta: ''
                 }
             }
         }
