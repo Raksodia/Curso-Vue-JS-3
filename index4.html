@@ -13,7 +13,7 @@
         </ul>
         <hr>
         <ul>
-            <li v-for="fruta in frutas_con_id" v-bind:key="fruta">{{fruta.id}} - {{fruta.nombre}}</li>
+            <li v-for="(fruta,index) in frutas_con_id" v-bind:key="fruta">Indice:{{index}} - {{fruta.id}} - {{fruta.nombre}}</li>
         </ul>
         <select>
             <option v-for="fruta in frutas_con_id" v-bind:value="fruta.id">{{fruta.nombre}}</option>
