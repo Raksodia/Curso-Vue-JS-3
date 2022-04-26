@@ -12,7 +12,7 @@
 <body>
     <div id="app">
         Contador {{ contador }}
-        <button type="button" v-on:click="stopInterval">Detener/Iniciar Contador</button>
+        <button type="button" v-on:click="stopInterval">{{ btnMessage }} Contador</button>
     </div>
     <script>
         //data, methods, props, mounted, created, computed, watch, destroyed
@@ -21,7 +21,8 @@
                 return{
                     contador: 0,
                     interval: null, 
-                    isRunning:false
+                    isRunning:false,
+                    btnMessage: 'Detener'
                 }
             },
             mounted (){
@@ -37,6 +38,7 @@
                     {
                         clearInterval(this.interval);
                         this.isRunning = false;
+                        this.btnMessage = 'Iniciar';
                     }
                     else
                     {
@@ -45,6 +47,7 @@
                         }, 1000);
                         this.isRunning = true;
                         this.contador = 0;
+                        this.btnMessage = 'Detener'
                     }
                 }
             }
