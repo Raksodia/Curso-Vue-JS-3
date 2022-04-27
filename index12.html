@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <input type="text" v-model="n1"><br>
+            <input type="text" v-model="n2"><br>
+            <h5>La suma es {{resultado}}</h5>
+            <hr>
+            <div>
+                <label>Escribe una Fruta</label>
+                <input type="text" v-model="fruta" />
+                <button type="button" @click="agregarFruta">Agregar Fruta</button>
+                <label>Ha agregado un total de {{total_frutas}} frutas</label>
+                <br>
+                <ul>
+                    <li v-for="fruta in frutas">{{futa}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = {
+            data(){
+                return {
+                    n1: 1,
+                    n2: 2,
+                    fruta: '',
+                    frutas: []
+                   
+                }
+            },
+            methods : {
+               agregarFruta()
+               {
+                   this.frutas.push(this.fruta);
+                   this.fruta = '';
+
+               }
+            }
+            ,
+            computed: {
+                resultado: function(){
+                    return parseFloat(this.n1) + parseFloat(this.n2);
+                },
+                total_frutas: function(){
+                    return this.frutas.length;
+                }
+            }
+        }
+        var mountedApp = Vue.createApp(app).mount("#app");
+    </script>
+</body>
+</html>
