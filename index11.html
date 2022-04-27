@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        'font-size' kebab-kase<br>
+        fontSize camelCase
+        <div v-bind:style="{'font-size': '16px', height: '100px', width: '100px', backgroundColor:'green'}">
+            Hola Mundo
+        </div><br>
+        <div v-bind:style="myStyle">
+            Hola Mundo
+        </div><br>
+        <div v-bind:style="[myStyle,myStyle2]">
+            Hola Mundo
+        </div><br>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = {
+            data(){
+                return {
+                    myStyle: {
+                        'font-size': '16px', 
+                        height: '100px',
+                         width: '100px',
+                        backgroundColor: 'green'
+                    },
+                    myStyle2: {
+                        'border': 'dashed 1px black', 
+                    },
+                }
+            },
+            methods : {
+               
+            }
+        }
+        var mountedApp = Vue.createApp(app).mount("#app");
+    </script>
+</body>
+</html>
