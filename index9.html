@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" :disabled="(usuarios == 5)" />
+        <label>
+            <input type="checkbox" :checked="chkChecked" />
+        </label>
+        <form method="post">
+        <input type="text" :required="obligatorio" />
+        <button type="submit">Enviar</button>
+        </form>
+        <select v-model="idFruta" class="browser-default">
+            <option v-for="fruta in frutas" v-bind:value="fruta.id">{{fruta.id}} - {{fruta.nombre}}</option>
+        </select>
+        <select class="browser-default">
+            <option v-for="fruta in frutas" v-bind:value="fruta.id" :selected="fruta.selected">{{fruta.id}} - {{fruta.nombre}}</option>
+        </select>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = {
+            data(){
+                return {
+                   txtDisabled: false,
+                   usuarios: 5,
+                   chkChecked: true,
+                   obligatorio: true,
+                   frutas: [
+                       {
+                           id: 1,
+                           nombre: 'Manzana',
+                           selected: false
+                       },
+                       {
+                           id: 2,
+                           nombre: 'Pera',
+                           selected: true
+                       },
+                       {
+                           id: 3,
+                           nombre: 'Sandia',
+                           selected: false
+                       }
+                   ],
+                   idFruta: 3
+                }
+            },
+            methods : {
+               
+            }
+        }
+        var mountedApp = Vue.createApp(app).mount("#app");
+    </script>
+</body>
+</html>
