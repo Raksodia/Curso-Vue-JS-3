@@ -9,8 +9,16 @@ _app.component('menu-component',{
                     </ul>
                     </div>
                 </nav>
-                <input type="text" v-model="usuario">`,
+                <input type="text" v-model="usuario">
+                <hr>
+                <button type="button" @click="saludarDesdeHijo">Haz Click</button>
+                `,
     props: {
         usuario: String
+    },
+    methods: {
+        saludarDesdeHijo(nombre) {
+            console.log("Hola Componente Hijo >> " + nombre);
+        }
     }
 });

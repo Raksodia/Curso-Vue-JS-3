@@ -3,7 +3,13 @@ const app = {
         return {
             usuario: '',
             correo: '',
-            clave: ''
+            clave: '',
+            nombre: 'Williamns Robles'
+        }
+    },
+    methods: {
+        llamarSaludoDesdeHijo(){
+            this.$refs.menuComponent.saludarDesdeHijo(this.nombre);
         }
     }
 }
