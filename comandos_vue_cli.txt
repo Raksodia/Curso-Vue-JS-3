@@ -1,0 +1,8 @@
+npm install -g @vue/cli //instalando vue cli
+npm update -g @vue/cli  //actualizando vue cli
+vue create hello-world //creando proyecto hello-world
+vue --version //version de vue
+npm run serve //ejecutar servicio de servidor
+npm install material-design-icons --save //instalar material icons
+npm install materialize-css@next //instalar materialize
+npm install --save axios vue-axios //instalar axios

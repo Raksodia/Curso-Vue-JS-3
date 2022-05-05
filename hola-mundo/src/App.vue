@@ -1,31 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld v-bind:msg="mensaje"/>
+ <div>Hola Mundo</div>
+ <button class="btn green" @click="saludar">Boton <i class="material-icons">save</i></button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import M from 'materialize-css'
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: 'App', 
+  mounted(){
+    this.axios.get('https://prueba.com');
   },
-  data(){
-    return {
-      mensaje: "Hola Williamns"
-    }
+  methods: {
+      saludar(){
+          M.toast({html: "Hola Mundo"});
+      }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
